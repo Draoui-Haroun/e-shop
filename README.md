@@ -17,6 +17,7 @@ A modern e-commerce website built with Next.js, React, and TypeScript.
 - [What I Learned](#what-i-learned)
 - [Challenges](#challenges)
 - [Future Improvements](#future-improvements)
+- [Live Demo](#live-demo)
 - [Author](#author)
 - [Acknowledgements](#acknowledgements)
 
@@ -156,6 +157,10 @@ During development I learned how to:
 - Product reviews and ratings
 - Multi-language support
 - Admin dashboard
+
+## Live Demo
+
+🚀 https://e-shop-one-flax.vercel.app/
 
 ## Author
 
