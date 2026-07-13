@@ -719,7 +719,6 @@ a {
         padding:15px 10px;
         gap:10px;
 
-        /* يخفي شريط التمرير */
         scrollbar-width:none;
     }
 
