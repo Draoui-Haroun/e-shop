@@ -1,10 +1,16 @@
+
 "use client";
 
 import { useState, createContext, useContext, ReactNode, useEffect } from "react";
 
+type CartItem = {
+    productId: number;
+    quantity: number;
+}
+
 type CartContextType = {
-    cart: number[];
-    setCart: React.Dispatch<React.SetStateAction<number[]>>;
+    cart: CartItem[];
+    setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
 }
 
 const CartContext = createContext<CartContextType | null>(null);
@@ -25,7 +31,7 @@ export function useCart() {
 
 
 export function CartProvider({ children }: Props) {
-    const [cart, setCart] = useState<number[]>([]);
+    const [cart, setCart] = useState<CartItem[]>([]);
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {

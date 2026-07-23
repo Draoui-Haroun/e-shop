@@ -1,3 +1,5 @@
+
+"use client"
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 type Props = {
@@ -5,13 +7,15 @@ type Props = {
 }
 
 export default function Rating({rating}:Props) {
+
+    const roundedRating = Math.round(rating * 2) / 2;
     return(
         <div className="rating">
             {[1,2,3,4,5].map((star) => {
-                if(rating>=star){
+                if(roundedRating >= star){
                     return <FaStar key={star} className="star filled" />;
                 }
-                if ( rating >= star - 0.5) {
+                if ( roundedRating >= star - 0.5) {
                     return <FaStarHalfAlt key={star} className="star filled" />;
                 }
 
@@ -19,7 +23,7 @@ export default function Rating({rating}:Props) {
             })}
 
             <span className="rating-value">
-                {rating.toFixed(1)}
+                {roundedRating.toFixed(1)}
             </span>
         </div>
     )

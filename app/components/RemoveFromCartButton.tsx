@@ -1,20 +1,24 @@
 
+"use client"
 import { useCart } from "../context/CartContext";
 
 type Props = {
-    productId: number;
+    productId : number;
 }
 
-export default function RemoveFromCartButton({productId}:Props) {
+export default function RemoveFromCartButton({productId}:Props){
+    const { cart, setCart } = useCart();
 
-    const { cart, setCart } = useCart();    
+    function removeFromCart() {
+        const newCart = cart.filter((item) => {
+            return item.productId !== productId;
+        })
+        setCart(newCart)
+    }
+
+    
 
     return(
-        <button onClick={() => {
-            const newCart = cart.filter((id) => id !== productId);
-            setCart(newCart);
-        }}>
-            Remove From the Cart
-        </button>
+        <button onClick={removeFromCart}>🗑 Remove</button>
     )
 }

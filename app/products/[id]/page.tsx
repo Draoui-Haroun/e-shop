@@ -1,6 +1,6 @@
 
 import { getProduct } from "@/lib/api";
-import AddToCartButton from "@/app/components/AddToCartButton";
+import CartButton from "@/app/components/CartButton";
 import Image from "next/image";
 import Rating from "@/app/components/Rating";
 
@@ -60,26 +60,9 @@ export default async function ProductPage({params} : Props) {
                     </p>
 
                     <div className="product-information">
-                        <div>
-                            <h3>Colors</h3>
-                            <div className="options">
-                                <span>Black</span>
-                                <span>Navy</span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h3>Sizes</h3>
-                            <div className="options">
-                                <span>S</span>
-                                <span>M</span>
-                                <span>L</span>
-                                <span>XL</span>
-                            </div>
-                        </div>
                     </div>
 
-                    <AddToCartButton productId={product.id} />
+                    <CartButton productId={product.id} />
                 </div>
                 
             </div>
